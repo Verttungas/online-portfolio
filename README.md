@@ -6,7 +6,7 @@ This is a modern, responsive personal portfolio and CV website designed to showc
 ## ✨ Features
 
 - **Responsive Design:** Fully optimized for mobile, tablet, and desktop screens.
-- **Professional Portfolio:** Dedicated sections for showcasing IT, automation, BI, and consulting projects.
+- **Professional Projects:** Dedicated sections for showcasing IT, automation, BI, and consulting projects.
 - **Downloadable CV:** Easy access to my ATS-optimized and standard CVs.
 - **Fun Terminal Section:** Dynamic fun facts rendered in a lightweight, retro-style terminal interface.
 
@@ -22,7 +22,7 @@ portfolio/
 ├── docs/             # CV documents
 │   ├── CV.docx       # Standard CV (downloadable)
 │
-├── portfolio.html    # Portfolio page
+├── projects.html    # Projects page
 └── index.html        # Main entry point (English)
 ```
 
@@ -37,7 +37,7 @@ Open `index.html` in your favorite browser to view the site locally.
 
 ## 📜 Usage
 
-- Edit content in `index.html` and `portfolio.html`.
+- Edit content in `index.html` and `projects.html`.
 - Update styles under `assets/css/styles.css`.
 - Replace or add project images inside `assets/img/`.
 - Update dynamic fun facts via `assets/js/fun_facts_en.js`.
