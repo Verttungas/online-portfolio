@@ -1,19 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=/en/">
-  <script>
-    const lang = navigator.language || navigator.userLanguage;
-    if (lang.startsWith('es')) {
-      window.location.href = "es/index.html";
-    } else {
-      window.location.href = "en/index.html";
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlos Vertti | Systems Engineering & Tech Solutions</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Carlos Vertti – Systems & IT Engineering student specializing in Python automation, business intelligence, cloud services, and IT solutions.">
+  <meta name="author" content="Carlos Vertti">
+  <meta name="keywords" content="Carlos Vertti, Systems Engineering, IT, Support, Python, Power BI, Portfolio, Automation, Cloud, SQL">
+
+  <!-- Social -->
+  <meta property="og:title" content="Carlos Vertti | Systems Engineering & Tech Solutions">
+  <meta property="og:description" content="Carlos Vertti's portfolio – IT support specialist, Python automator, and BI developer.">
+  <meta property="og:image" content="assets/img/PP.jpg">
+
+  <!-- Bootstrap & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <script src="assets/js/fun_facts_en.js" defer></script>
+
+  <style>
+    .pixel-animation {
+      font-family: monospace;
+      color: #00ff99;
+      animation: pixel-flicker 1.5s infinite alternate;
     }
-  </script>
-  <title>Redirecting...</title>
+    @keyframes pixel-flicker {
+      0% { opacity: 1; text-shadow: 0 0 2px #00ff99; }
+      50% { opacity: 0.6; text-shadow: 0 0 5px #00ff99; }
+      100% { opacity: 1; text-shadow: 0 0 2px #00ff99; }
+    }
+  </style>
 </head>
-<body>
-  <p>Redirecting to your preferred language...</p>
+
+<body class="dark-mode">
+  <div class="container py-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <div class="d-flex align-items-center">
+        <div class="rounded-circle me-2 status-indicator"></div>
+        <h5 class="mb-0 text-light">Carlos Vertti - Systems Engineering | Automation & BI Solutions</h5>
+      </div>
+      <div class="pixel-animation">// Geek Alert ON //</div>
+    </div>
+
+    <!-- Profile & Bio -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <div class="d-inline-block p-3">
+          <img src="assets/img/PP.jpg" alt="Carlos Vertti Profile Photo" class="circle-img-xl rounded-circle" loading="lazy" />
+        </div>
+      </div>
+      <div class="col-md-6 text-center text-md-start text-light">
+        <h1 class="display-5">Carlos Vertti</h1>
+        <ul>
+          <li>Systems and IT Engineering Student</li>
+          <li>Specialized in Automation, Cloud, and Business Intelligence</li>
+        </ul>
+
+        <h5 class="text-info fw-bold fs-4">A Bit About Me</h5>
+        <p>
+          I'm a Systems and IT Engineering student passionate about creating smarter, more efficient technology solutions.
+          I specialize in Python automation, cloud services, IT support, and data analytics.
+          I've developed tools using Python, Flask, SQL, Power BI, SharePoint, and AWS.
+          Through my freelance project Techno Boost MX, I've helped small businesses optimize operations through custom tech solutions.
+          Outside of work, I'm passionate about comics, music, gaming, and diving deep into social and economic history.
+        </p>
+
+        <h5 class="text-info fw-bold fs-4 mt-4">Professional Summary</h5>
+        <ul>
+          <li>IT & Data Solutions Intern at Daimler Truck Mexico (Python, Flask, Power BI, SharePoint).</li>
+          <li>4+ years of experience in IT support, business intelligence, and cloud platforms.</li>
+          <li>Proficient in Python automation, SQL databases, KPI reporting, and Microsoft 365 cloud tools.</li>
+          <li>Freelance IT consultant at Techno Boost MX, implementing ERP solutions and building no-code apps.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="text-center mb-5">
+      <blockquote class="blockquote text-info">
+        <p class="mb-0 fs-4">"It's not just about tech – it's about how tech affects people."</p>
+      </blockquote>
+    </div>
+
+    <!-- Call-to-action Buttons -->
+    <div class="text-center mb-5">
+      <a href="https://www.linkedin.com/in/carlos-alberto-ortiz-p%C3%A9rez-vertti-824b9a2a0/" target="_blank" class="tag-btn resume">LinkedIn</a>
+      <a href="docs/CV.docx" target="_blank" class="tag-btn research">CV (Download)</a>
+      <a href="projects.html" target="_blank" class="tag-btn outreach">Projects</a>
+      <a href="https://github.com/verttungas" target="_blank" class="tag-btn personal">GitHub</a>
+    </div>
+
+    <!-- Terminal -->
+    <div class="text-light my-5" style="background-color: #101820; padding: 1.5rem; border-radius: 8px; font-family: monospace;">
+      <h5 class="mb-3 text-info">// verttigo - zsh</h5>
+      <p id="funFact" class="fs-6" style="white-space: pre-wrap;"></p>
+    </div>  
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between text-light">
+      <div class="mb-3 mb-md-0">
+        <div class="fw-bold text-uppercase">Email</div>
+        <div class="text-info"><a href="mailto:c.vertti@outlook.com" class="text-info" target="_blank">c.vertti@outlook.com</a></div>
+      </div>
+      <div class="text-end text-white small">
+        <div>&copy; 2025 Carlos Vertti</div>
+        <div>Made with ❤️ in Lab Anáhuac</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

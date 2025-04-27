@@ -1,36 +1,29 @@
-# Personal CV Website
 
-This is a responsive, bilingual personal CV and portfolio website designed to showcase skills, experiences, and projects professionally.
+# 🌐 Personal Portfolio Website – Carlos Vertti
 
-## 🌟 Features
+This is a modern, responsive personal portfolio and CV website designed to showcase my skills, experiences, and projects professionally.
 
-- **Responsive Design:** Optimized for viewing on various devices and screen sizes.
-- **Bilingual Support:** Available in both English and Spanish.
-- **Portfolio Section:** Dedicated pages for showcasing your projects.
-- **Downloadable CV:** PDF versions provided for easy access and offline use.
+## ✨ Features
+
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop screens.
+- **Professional Portfolio:** Dedicated sections for showcasing IT, automation, BI, and consulting projects.
+- **Downloadable CV:** Easy access to my ATS-optimized and standard CVs.
+- **Fun Terminal Section:** Dynamic fun facts rendered in a lightweight, retro-style terminal interface.
 
 ## 📂 Project Structure
 
 ```
-CV/
+portfolio/
 ├── assets/
-│   ├── css/          # CSS stylesheets
+│   ├── css/          # Stylesheets
 │   ├── img/          # Images and graphics
-│   └── js/           # JavaScript functionality
+│   └── js/           # JavaScript functionality (dynamic fun facts)
 │
-├── docs/             # PDF documents of the CV
-│   ├── ATS-CV.pdf
-│   └── CV.pdf
+├── docs/             # CV documents
+│   ├── CV.docx       # Standard CV (downloadable)
 │
-├── en/               # English version of the website
-│   ├── index.html
-│   └── portfolio.html
-│
-├── es/               # Spanish version of the website
-│   ├── index.html
-│   └── portfolio.html
-│
-└── index.html        # Main entry point
+├── portfolio.html    # Portfolio page
+└── index.html        # Main entry point (English)
 ```
 
 ## 🚀 Getting Started
@@ -44,22 +37,27 @@ Open `index.html` in your favorite browser to view the site locally.
 
 ## 📜 Usage
 
-Customize your content by modifying the HTML files located in the `en` and `es` directories and updating assets like images, CSS, and JS as needed.
+- Edit content in `index.html` and `portfolio.html`.
+- Update styles under `assets/css/styles.css`.
+- Replace or add project images inside `assets/img/`.
+- Update dynamic fun facts via `assets/js/fun_facts_en.js`.
 
-## 📄 Documents
+## 📄 CV Documents
 
-Your CVs in PDF format are located under the `docs/` directory.
-- `CV.pdf`: Standard version
-- `ATS-CV.pdf`: Optimized for Applicant Tracking Systems
+Located under the `docs/` directory:
+- `CV.docx`: Standard CV file, downloadable from the site.
 
 ## 🔗 Deployment
 
-Simply upload your files to a web server or use services like GitHub Pages, Netlify, or Vercel for quick deployment.
+You can deploy this site easily on platforms like:
+- **GitHub Pages** (recommended for free hosting)
+- **Netlify**
+- **Vercel**
 
-## 💡 Contributions
+## 🤝 Contributions
 
-Feel free to fork this project, submit issues, or open pull requests to improve it further!
+Feel free to fork, open issues, or submit pull requests to improve this template!
 
 ---
 
-Made with ❤️ and HTML/CSS/JS.
+Made with ❤️ by **Carlos Vertti** – Powered by HTML, CSS, JavaScript, and passion for tech.
