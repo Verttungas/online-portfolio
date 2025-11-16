@@ -1,118 +1,593 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carlos Vertti | Systems Engineering & Tech Solutions</title>
+  <title>Carlos Vertti | CTO & InfoSec Engineer</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Carlos Vertti – Systems & IT Engineering student specializing in Python automation, business intelligence, cloud services, and IT solutions.">
+  <meta name="description" content="Carlos Vertti – CTO, GRC & InfoSec Engineer especializado en automatización con IA, ciberseguridad y desarrollo de soluciones tecnológicas empresariales.">
   <meta name="author" content="Carlos Vertti">
-  <meta name="keywords" content="Carlos Vertti, Systems Engineering, IT, Support, Python, Power BI, Portfolio, Automation, Cloud, SQL">
+  <meta name="keywords" content="Carlos Vertti, CTO, GRC, InfoSec, Ciberseguridad, Python, Automatización, IA, Cloud, AWS">
 
-  <!-- Social -->
-  <meta property="og:title" content="Carlos Vertti | Systems Engineering & Tech Solutions">
-  <meta property="og:description" content="Carlos Vertti's portfolio – IT support specialist, Python automator, and BI developer.">
+  <meta property="og:title" content="Carlos Vertti | CTO & InfoSec Engineer">
+  <meta property="og:description" content="CTO en 1927 y GRC Engineer en Clip. Especializado en automatización, IA y ciberseguridad.">
   <meta property="og:image" content="assets/img/PP.jpg">
 
-  <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <script src="assets/js/fun_facts_en.js" defer></script>
 
   <style>
-    .pixel-animation {
-      font-family: monospace;
-      color: #00ff99;
-      animation: pixel-flicker 1.5s infinite alternate;
+    :root {
+      --bg-primary: #111827;
+      --bg-secondary: #1F2937;
+      --accent-primary: #8B5CF6;
+      --accent-secondary: #10B981;
+      --text-primary: #E5E7EB;
+      --text-secondary: #9CA3AF;
+      --border: #374151;
     }
-    @keyframes pixel-flicker {
-      0% { opacity: 1; text-shadow: 0 0 2px #00ff99; }
-      50% { opacity: 0.6; text-shadow: 0 0 5px #00ff99; }
-      100% { opacity: 1; text-shadow: 0 0 2px #00ff99; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .lang-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: var(--bg-secondary);
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .lang-selector a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .lang-selector a:hover,
+    .lang-selector a.active {
+      color: var(--accent-primary);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-secondary);
+      padding: 8px 16px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--accent-secondary);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-primary);
+      box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+    }
+
+    .section-title {
+      color: var(--accent-primary);
+      font-weight: 700;
+      font-size: 1.75rem;
+      margin-bottom: 24px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+      margin-top: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      padding-left: 24px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -46px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      border: 3px solid var(--bg-primary);
+    }
+
+    .timeline-item.current::before {
+      background: var(--accent-secondary);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .timeline-company {
+      color: var(--accent-primary);
+      font-weight: 500;
+    }
+
+    .timeline-period {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .timeline-description {
+      color: var(--text-secondary);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .skill-category {
+      background: var(--bg-secondary);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+    }
+
+    .skill-category h4 {
+      color: var(--accent-primary);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: var(--bg-primary);
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin: 48px 0;
+    }
+
+    .btn-primary {
+      background: var(--accent-primary);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--accent-primary);
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--accent-primary);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--border);
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    .terminal {
+      background: #0D1117;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 48px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+    }
+
+    .terminal-header {
+      color: var(--accent-secondary);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .terminal-output {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .terminal-prompt {
+      color: var(--accent-primary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      margin-top: 80px;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    footer a {
+      color: var(--accent-primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 0 40px;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .timeline {
+        padding-left: 30px;
+      }
+
+      .timeline-item::before {
+        left: -36px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
-<body class="dark-mode">
-  <div class="container py-5">
+<body>
+  <!-- Language Selector -->
+  <div class="lang-selector">
+    <a href="index.html" class="active">ES</a> | 
+    <a href="en/index.html">EN</a>
+  </div>
 
-    <!-- Header -->
-    <div class="d-flex justify-content-between align-items-center mb-5">
-      <div class="d-flex align-items-center">
-        <div class="rounded-circle me-2 status-indicator"></div>
-        <h5 class="mb-0 text-light">Carlos Vertti - Systems Engineering | Automation & BI Solutions</h5>
+  <div class="container py-5">
+    <!-- Hero Section -->
+    <section class="hero text-center">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Disponible para proyectos freelance</span>
       </div>
-      <div class="pixel-animation">// Geek Alert ON //</div>
+      
+      <img src="assets/img/PP.jpg" alt="Carlos Vertti" class="profile-img mb-4" loading="lazy" />
+      
+      <h1 class="display-4 mb-3">Carlos Vertti</h1>
+      <p class="lead text-secondary mb-4">
+        CTO | GRC & InfoSec Engineer | Automation & IA Specialist
+      </p>
+      
+      <p class="mx-auto" style="max-width: 700px;">
+        Estudiante de Ingeniería en Sistemas y TI en la Universidad Anáhuac México Norte. 
+        Actualmente CTO en 1927 y GRC & InfoSec Intern en Clip, con 5 años de experiencia 
+        desarrollando soluciones tecnológicas que optimizan procesos mediante automatización, 
+        IA y ciberseguridad.
+      </p>
+    </section>
+
+    <!-- CTA Buttons -->
+    <div class="cta-buttons">
+      <a href="https://www.linkedin.com/in/carlos-vertti-824b9a2a0/" target="_blank" class="btn-primary">LinkedIn</a>
+      <a href="docs/CV.docx" class="btn-secondary">Descargar CV</a>
+      <a href="projects.html" class="btn-secondary">Ver Proyectos</a>
+      <a href="https://github.com/verttungas" target="_blank" class="btn-secondary">GitHub</a>
     </div>
 
-    <!-- Profile & Bio -->
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6 text-center mb-4 mb-md-0">
-        <div class="d-inline-block p-3">
-          <img src="assets/img/PP.jpg" alt="Carlos Vertti Profile Photo" class="circle-img-xl rounded-circle" loading="lazy" />
+    <!-- Experience Timeline -->
+    <section class="my-5">
+      <h2 class="section-title">Experiencia Profesional</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item current">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">GRC & InfoSec Intern</h3>
+              <p class="timeline-company">Clip (PayClip)</p>
+            </div>
+            <span class="timeline-period">Jul 2025 - Presente</span>
+          </div>
+          <p class="timeline-description">
+            Desarrollo de automatizaciones con IA integrada para procesos de gobernanza, 
+            riesgo y cumplimiento (GRC) y seguridad de la información.
+          </p>
+        </div>
+
+        <div class="timeline-item current">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Chief Technology Officer (CTO)</h3>
+              <p class="timeline-company">1927</p>
+            </div>
+            <span class="timeline-period">Ago 2025 - Presente</span>
+          </div>
+          <p class="timeline-description">
+            Dirección de arquitectura tecnológica, desarrollo de plataforma ecommerce, 
+            administración de Google Workspace, gestión de ciberseguridad, servidor Ubuntu, 
+            automatizaciones con n8n e integración de IA en operaciones.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">BI & Automation Intern</h3>
+              <p class="timeline-company">Daimler Truck México</p>
+            </div>
+            <span class="timeline-period">May 2024 - May 2025</span>
+          </div>
+          <p class="timeline-description">
+            Desarrollo de soluciones de datos automatizadas en la nube para seguimiento 
+            de KPIs. Creé una plataforma integral con Python, Flask, SQL y Power BI que 
+            mejoró la eficiencia en generación de reportes y toma de decisiones basadas en datos.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">App Developer</h3>
+              <p class="timeline-company">Azteca Construcciones Industriales</p>
+            </div>
+            <span class="timeline-period">Ene 2021 - Ago 2021</span>
+          </div>
+          <p class="timeline-description">
+            Diseño y desarrollo de sistema de monitoreo con Google Sheets, Drive y AppSheet 
+            para optimizar operaciones. Aplicación cloud para seguimiento en tiempo real de 
+            recursos y avance de proyectos.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Freelance IT Support & Automation</h3>
+              <p class="timeline-company">Techno Boost MX</p>
+            </div>
+            <span class="timeline-period">2020 - Presente</span>
+          </div>
+          <p class="timeline-description">
+            5 años ofreciendo soporte técnico, automatización de procesos y consultoría TI 
+            para pequeñas y medianas empresas.
+          </p>
         </div>
       </div>
-      <div class="col-md-6 text-center text-md-start text-light">
-        <h1 class="display-5">Carlos Vertti</h1>
-        <ul>
-          <li>Systems and IT Engineering Student</li>
-          <li>Specialized in Automation, Cloud, and Business Intelligence</li>
-        </ul>
+    </section>
 
-        <h5 class="text-info fw-bold fs-4">A Bit About Me</h5>
-        <p>
-          I'm a Systems and IT Engineering student passionate about creating smarter, more efficient technology solutions.
-          I specialize in Python automation, cloud services, IT support, and data analytics.
-          I've developed tools using Python, Flask, SQL, Power BI, SharePoint, and AWS.
-          Through my freelance project Techno Boost MX, I've helped small businesses optimize operations through custom tech solutions.
-          Outside of work, I'm passionate about comics, music, gaming, and diving deep into social and economic history.
-        </p>
+    <!-- Skills -->
+    <section class="my-5">
+      <h2 class="section-title">Habilidades Técnicas</h2>
+      
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Lenguajes & Frameworks</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
 
-        <h5 class="text-info fw-bold fs-4 mt-4">Professional Summary</h5>
-        <ul>
-          <li>IT & Data Solutions Intern at Daimler Truck Mexico (Python, Flask, Power BI, SharePoint).</li>
-          <li>4+ years of experience in IT support, business intelligence, and cloud platforms.</li>
-          <li>Proficient in Python automation, SQL databases, KPI reporting, and Microsoft 365 cloud tools.</li>
-          <li>Freelance IT consultant at Techno Boost MX, implementing ERP solutions and building no-code apps.</li>
-        </ul>
+        <div class="skill-category">
+          <h4>Cloud & DevOps</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Google Workspace</span>
+            <span class="skill-tag">Microsoft 365</span>
+            <span class="skill-tag">Linux (RHEL)</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Data & BI</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">SharePoint</span>
+            <span class="skill-tag">Oracle DB</span>
+            <span class="skill-tag">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Automation & AI</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">n8n</span>
+            <span class="skill-tag">IA Integration</span>
+            <span class="skill-tag">AppSheet</span>
+            <span class="skill-tag">Power Query</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Seguridad & Redes</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">GRC</span>
+            <span class="skill-tag">InfoSec</span>
+            <span class="skill-tag">Cisco CCNA</span>
+            <span class="skill-tag">Ciberseguridad</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Certificaciones</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Google IT</span>
+            <span class="skill-tag">Cisco</span>
+            <span class="skill-tag">NDG Linux</span>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Quote -->
-    <div class="text-center mb-5">
-      <blockquote class="blockquote text-info">
-        <p class="mb-0 fs-4">"It's not just about tech – it's about how tech affects people."</p>
-      </blockquote>
-    </div>
-
-    <!-- Call-to-action Buttons -->
-    <div class="text-center mb-5">
-      <a href="https://www.linkedin.com/in/carlos-vertti-824b9a2a0/" target="_blank" class="tag-btn resume">LinkedIn</a>
-      <a href="docs/CV.docx" target="_blank" class="tag-btn research">CV (Download)</a>
-      <a href="projects.html" class="tag-btn outreach">Projects</a>
-      <a href="https://github.com/verttungas" target="_blank" class="tag-btn personal">GitHub</a>
-    </div>
+    </section>
 
     <!-- Terminal -->
-    <div class="text-light my-5" style="background-color: #101820; padding: 1.5rem; border-radius: 8px; font-family: monospace;">
-      <h5 class="mb-3 text-info">// verttigo - zsh</h5>
-      <p id="funFact" class="fs-6" style="white-space: pre-wrap;"></p>
-    </div>  
+    <div class="terminal">
+      <div class="terminal-header">verttigo@portfolio:~$</div>
+      <div id="terminalOutput" class="terminal-output"></div>
+    </div>
 
     <!-- Footer -->
-    <footer class="mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between text-light">
-      <div class="mb-3 mb-md-0">
-        <div class="fw-bold text-uppercase">Email</div>
-        <div class="text-info"><a href="mailto:c.vertti@outlook.com" class="text-info" target="_blank">c.vertti@outlook.com</a></div>
-      </div>
-      <div class="text-end text-white small">
-        <div>&copy; 2025 Carlos Vertti</div>
-        <div>Made with ❤️ in Lab Anáhuac</div>
-      </div>
+    <footer>
+      <p class="mb-2">
+        <strong>Email:</strong> <a href="mailto:c.vertti@outlook.com">c.vertti@outlook.com</a>
+      </p>
+      <p class="small">
+        © 2025 Carlos Vertti | Hecho con ❤️ en Ciudad de México
+      </p>
     </footer>
   </div>
+
+  <script>
+    // Terminal animation
+    const commands = [
+      { delay: 100, text: '> whoami' },
+      { delay: 800, text: 'Carlos Vertti - CTO & InfoSec Engineer' },
+      { delay: 1200, text: '> cat skills.txt' },
+      { delay: 1800, text: 'Python | IA | Cloud | GRC | Automation | Ciberseguridad' },
+      { delay: 2400, text: '> echo $STATUS' },
+      { delay: 3000, text: 'Siempre aprendiendo, siempre construyendo.' }
+    ];
+
+    const output = document.getElementById('terminalOutput');
+    let totalDelay = 0;
+
+    commands.forEach(cmd => {
+      totalDelay += cmd.delay;
+      setTimeout(() => {
+        const line = document.createElement('div');
+        line.innerHTML = cmd.text.startsWith('>') 
+          ? `<span class="terminal-prompt">${cmd.text}</span>`
+          : cmd.text;
+        output.appendChild(line);
+      }, totalDelay);
+    });
+
+    setTimeout(() => {
+      const cursor = document.createElement('span');
+      cursor.innerHTML = ' <span style="animation: blink 1s infinite">█</span>';
+      output.appendChild(cursor);
+    }, totalDelay + 500);
+  </script>
+
+  <style>
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
 </body>
 </html>
