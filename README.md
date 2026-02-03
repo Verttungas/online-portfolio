@@ -44,7 +44,7 @@ URL: https://verttungas.github.io/online-portfolio/
 
 - Email: cvertti@1927brand.com
 - LinkedIn: [Carlos Vertti](https://www.linkedin.com/in/carlos-vertti-824b9a2a0/)
-- GitHub: [Verttungas] (https://github.com/Verttungas)
+- GitHub: [Verttungas](https://github.com/Verttungas)
 
 ---
 
