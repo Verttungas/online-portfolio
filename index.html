@@ -38,7 +38,7 @@
     <section class="hero text-center" data-aos="fade-up">
       <div class="status-badge">
         <span class="status-dot"></span>
-        <span>Disponible para proyectos freelance</span>
+        <span>Abierto a oportunidades</span>
       </div>
       
       <img src="assets/img/PP.webp" alt="Carlos Vertti" class="profile-img mb-4" loading="lazy" />
@@ -143,69 +143,25 @@
 
     <section id="skills" class="my-5" data-aos="fade-up">
       <h2 class="section-title">Habilidades Técnicas</h2>
-      
-      <div class="skills-grid">
-        <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
-          <h4>Lenguajes & Frameworks</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">JavaScript</span>
-          </div>
-        </div>
+      <div id="skillsMatrix" class="skills-matrix-container"></div>
+    </section>
 
-        <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
-          <h4>Cloud & DevOps</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">AWS S3</span>
-            <span class="skill-tag">AWS EC2</span>
-            <span class="skill-tag">Google Workspace</span>
-            <span class="skill-tag">Microsoft 365</span>
-            <span class="skill-tag">Linux (RHEL)</span>
-          </div>
-        </div>
+    <!-- Interactive Terminal -->
+    <section class="my-5" data-aos="fade-up">
+      <h2 class="section-title">Terminal Interactiva</h2>
+      <div id="interactiveTerminal" class="terminal-interactive"></div>
+    </section>
 
-        <div class="skill-category" data-aos="zoom-in" data-aos-delay="300">
-          <h4>Data & BI</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">SharePoint</span>
-            <span class="skill-tag">Oracle DB</span>
-            <span class="skill-tag">MongoDB</span>
-          </div>
-        </div>
+    <!-- Password Generator -->
+    <section class="my-5" data-aos="fade-up">
+      <h2 class="section-title">Generador de Contraseñas Seguras</h2>
+      <div id="passwordGenerator"></div>
+    </section>
 
-        <div class="skill-category" data-aos="zoom-in" data-aos-delay="400">
-          <h4>Automation & AI</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">n8n</span>
-            <span class="skill-tag">IA Integration</span>
-            <span class="skill-tag">AppSheet</span>
-            <span class="skill-tag">Power Query</span>
-          </div>
-        </div>
-
-        <div class="skill-category" data-aos="zoom-in" data-aos-delay="500">
-          <h4>Seguridad & Redes</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">GRC</span>
-            <span class="skill-tag">InfoSec</span>
-            <span class="skill-tag">Cyberhaven</span>
-            <span class="skill-tag">ZenGRC</span>
-            <span class="skill-tag">Cisco CCNA</span>
-          </div>
-        </div>
-
-        <div class="skill-category" data-aos="zoom-in" data-aos-delay="600">
-          <h4>Certificaciones</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Google IT</span>
-            <span class="skill-tag">Cisco</span>
-            <span class="skill-tag">NDG Linux</span>
-          </div>
-        </div>
-      </div>
+    <!-- ROT13 Cipher -->
+    <section class="my-5" data-aos="fade-up">
+      <h2 class="section-title">ROT13 Cipher/Decoder</h2>
+      <div id="rot13Cipher"></div>
     </section>
 
     <div class="terminal" data-aos="fade-up">
@@ -224,6 +180,11 @@
   </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/terminal.js"></script>
+  <script src="assets/js/skills-matrix.js"></script>
+  <script src="assets/js/password-generator.js"></script>
+  <script src="assets/js/cipher.js"></script>
   <script>
     // AOS Init
     AOS.init({
