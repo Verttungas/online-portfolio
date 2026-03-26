@@ -112,9 +112,7 @@ class PasswordGenerator {
     // Generar parte pronunciable usando sílabas
     while (pronounceable.length < pronounceableLength) {
       const syllable = this.syllables[Math.floor(Math.random() * this.syllables.length)];
-      if (pronounceable.length + syllable.length <= pronounceableLength) {
-        pronounceable += syllable;
-      }
+      pronounceable += syllable;
     }
     
     // Asegurar que sea exactamente del largo correcto

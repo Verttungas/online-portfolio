@@ -20,9 +20,9 @@ class InteractiveTerminal {
     this.input = document.getElementById('terminalInput');
 
     this.input.addEventListener('keydown', (e) => this.handleKeyDown(e));
-    this.input.focus();
+    this.input.focus({ preventScroll: true });
 
-    this.container.addEventListener('click', () => this.input.focus());
+    this.container.addEventListener('click', () => this.input.focus({ preventScroll: true }));
 
     this.printWelcome();
   }
@@ -110,7 +110,7 @@ Type 'help' to see available commands.
         education: () => this.showEducation(),
         contact: () => this.showContact(),
         clear: () => this.clear(),
-        whoami: () => this.print('Carlos Vertti - CTO & InfoSec Engineer'),
+        whoami: () => this.print('Carlos Vertti - IT Engineering Student · CTO @ 1927'),
         ls: () => this.listSections(),
         pwd: () => this.print('/home/verttigo/portfolio'),
         date: () => this.print(new Date().toLocaleString('es-ES')),
@@ -126,7 +126,7 @@ Type 'help' to see available commands.
         education: () => this.showEducation(),
         contact: () => this.showContact(),
         clear: () => this.clear(),
-        whoami: () => this.print('Carlos Vertti - CTO & InfoSec Engineer'),
+        whoami: () => this.print('Carlos Vertti - IT Engineering Student · CTO @ 1927'),
         ls: () => this.listSections(),
         pwd: () => this.print('/home/verttigo/portfolio'),
         date: () => this.print(new Date().toLocaleString('en-US')),
@@ -201,45 +201,61 @@ and security to solve complex business problems.
 
   showSkills() {
     const skills = this.lang === 'es' ? `
-Habilidades Técnicas
+Habilidades Tecnicas
 --------------------
-📌 Lenguajes & Frameworks:
-   Python, Flask, SQL, JavaScript
+> Lenguajes & Frameworks:
+  Python, JavaScript, TypeScript, HTML/CSS, PHP, Java,
+  Kotlin, Dart, Flutter, Go, C/C++, Visual Basic, R,
+  SQL, Bash/Shell, Flask
 
-☁️  Cloud & DevOps:
-   AWS S3, AWS EC2, Google Workspace, Microsoft 365, Linux (RHEL)
+> Cloud & DevOps:
+  AWS S3, AWS EC2, Google Cloud, GWS Admin, Microsoft 365,
+  Ubuntu Server, Linux (RHEL), Arquitectura HA,
+  Cloudflare Tunnels, Tailscale
 
-📊 Data & BI:
-   Power BI, SharePoint, Oracle DB, MongoDB
+> Data & BI:
+  Power BI, Streamlit, Apache Superset, SharePoint,
+  Oracle DB, MongoDB
 
-🤖 Automation & AI:
-   n8n, IA Integration, AppSheet, Power Query
+> IA & Automatizacion:
+  n8n, Claude Code, Copilot CLI, Gemini, AppSheet,
+  Power Query
 
-🔒 Security & Networks:
-   GRC, InfoSec, Cyberhaven, ZenGRC, Cisco CCNA
+> Ciberseguridad:
+  GRC, InfoSec, Cyberhaven, ZenGRC, Cisco CCNA
 
-🎓 Certifications:
-   Google IT, Cisco, NDG Linux
+> Certificaciones:
+  Google IT Support, NVIDIA Deep Learning, AWS Cloud Dev,
+  CCNAv7 Switching & Routing, CCNAv7 Intro to Networks,
+  NDG Linux, R Visualizacion (Coursera), Platzi SQL
 ` : `
 Technical Skills
 ----------------
-📌 Languages & Frameworks:
-   Python, Flask, SQL, JavaScript
+> Languages & Frameworks:
+  Python, JavaScript, TypeScript, HTML/CSS, PHP, Java,
+  Kotlin, Dart, Flutter, Go, C/C++, Visual Basic, R,
+  SQL, Bash/Shell, Flask
 
-☁️  Cloud & DevOps:
-   AWS S3, AWS EC2, Google Workspace, Microsoft 365, Linux (RHEL)
+> Cloud & DevOps:
+  AWS S3, AWS EC2, Google Cloud, GWS Admin, Microsoft 365,
+  Ubuntu Server, Linux (RHEL), HA Architecture,
+  Cloudflare Tunnels, Tailscale
 
-📊 Data & BI:
-   Power BI, SharePoint, Oracle DB, MongoDB
+> Data & BI:
+  Power BI, Streamlit, Apache Superset, SharePoint,
+  Oracle DB, MongoDB
 
-🤖 Automation & AI:
-   n8n, AI Integration, AppSheet, Power Query
+> AI & Automation:
+  n8n, Claude Code, Copilot CLI, Gemini, AppSheet,
+  Power Query
 
-🔒 Security & Networks:
-   GRC, InfoSec, Cyberhaven, ZenGRC, Cisco CCNA
+> Cybersecurity:
+  GRC, InfoSec, Cyberhaven, ZenGRC, Cisco CCNA
 
-🎓 Certifications:
-   Google IT, Cisco, NDG Linux
+> Certifications:
+  Google IT Support, NVIDIA Deep Learning, AWS Cloud Dev,
+  CCNAv7 Switching & Routing, CCNAv7 Intro to Networks,
+  NDG Linux, R Visualization (Coursera), Platzi SQL
 `;
     this.print(skills);
   }

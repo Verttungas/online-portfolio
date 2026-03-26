@@ -42,10 +42,10 @@ URL: https://verttungas.github.io/online-portfolio/
 
 ## 📧 Contacto
 
-- Email: cvertti@1927brand.com
+- Email: verttigo@proton.me
 - LinkedIn: [Carlos Vertti](https://www.linkedin.com/in/carlos-vertti-824b9a2a0/)
 - GitHub: [Verttungas](https://github.com/Verttungas)
 
 ---
 
-© 2026 Carlos Vertti | CTO & InfoSec Engineer
+© 2026 Carlos Vertti | CTO & InfoSec Intern

@@ -43,7 +43,7 @@ class ParticleSystem {
   setupParticles() {
     this.particles = [];
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 60 : 100;
+    const particleCount = isMobile ? 30 : 50;
     
     for (let i = 0; i < particleCount; i++) {
       this.particles.push(new Particle(
@@ -96,7 +96,7 @@ class ParticleSystem {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         if (distance < maxDistance) {
-          const opacity = (1 - distance / maxDistance) * 0.3;
+          const opacity = (1 - distance / maxDistance) * 0.12;
           this.ctx.strokeStyle = this.theme === 'dark' 
             ? `rgba(139, 92, 246, ${opacity})`
             : `rgba(124, 58, 237, ${opacity})`;
@@ -128,7 +128,7 @@ class Particle {
   constructor(x, y, theme) {
     this.x = x;
     this.y = y;
-    this.size = Math.random() * 3 + 1;
+    this.size = Math.random() * 2 + 0.5;
     this.baseX = x;
     this.baseY = y;
     this.density = Math.random() * 30 + 1;
@@ -147,13 +147,13 @@ class Particle {
     // Alternar entre púrpura y verde
     const isPurple = Math.random() > 0.5;
     if (this.theme === 'dark') {
-      this.color = isPurple 
-        ? 'rgba(139, 92, 246, 0.8)'   // Púrpura
-        : 'rgba(16, 185, 129, 0.8)';  // Verde
+      this.color = isPurple
+        ? 'rgba(129, 140, 248, 0.25)'
+        : 'rgba(52, 211, 153, 0.2)';
     } else {
-      this.color = isPurple 
-        ? 'rgba(124, 58, 237, 0.6)'   // Púrpura más oscuro
-        : 'rgba(5, 150, 105, 0.6)';   // Verde más oscuro
+      this.color = isPurple
+        ? 'rgba(99, 102, 241, 0.15)'
+        : 'rgba(5, 150, 105, 0.12)';
     }
   }
 

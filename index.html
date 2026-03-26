@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carlos Vertti | CTO & InfoSec Engineer</title>
+  <title>Carlos Vertti | IT Engineering Student · CTO @ 1927</title>
 
   <meta name="description" content="Carlos Vertti – CTO, GRC & InfoSec Engineer especializado en automatización con IA, ciberseguridad y desarrollo de soluciones tecnológicas empresariales.">
   <meta name="author" content="Carlos Vertti">
   <meta name="keywords" content="Carlos Vertti, CTO, GRC, InfoSec, Ciberseguridad, Python, Automatización, IA, Cloud, AWS">
 
-  <meta property="og:title" content="Carlos Vertti | CTO & InfoSec Engineer">
+  <meta property="og:title" content="Carlos Vertti | IT Engineering Student · CTO @ 1927">
   <meta property="og:description" content="CTO en 1927 y GRC Engineer en Clip. Especializado en automatización, IA y ciberseguridad.">
   <meta property="og:image" content="assets/img/PP.webp">
   <meta property="og:url" content="https://Verttungas.github.io/online-portfolio/">
@@ -23,10 +23,14 @@
 
 <body>
   <!-- Theme Toggle -->
-  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-    <span class="sun">☀️</span>
-    <span class="moon">🌙</span>
-  </button>
+  <label class="theme-toggle" aria-label="Toggle theme">
+    <input type="checkbox" id="themeToggle">
+    <span class="toggle-track">
+      <svg class="toggle-icon toggle-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <span class="toggle-thumb"></span>
+      <svg class="toggle-icon toggle-moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </span>
+  </label>
 
   <!-- Language Selector -->
   <div class="lang-selector">
@@ -45,7 +49,7 @@
       
       <h1 class="display-4 mb-3">Carlos Vertti</h1>
       <p class="lead text-secondary mb-4">
-        CTO | GRC & InfoSec Engineer | Automation & IA Specialist
+        IT Engineering Student · CTO @ 1927
       </p>
       
       <p class="mx-auto" style="max-width: 700px;">
@@ -207,21 +211,21 @@
     // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    
+
     const currentTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', currentTheme);
-    
-    themeToggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
+    themeToggle.checked = currentTheme === 'light';
+
+    themeToggle.addEventListener('change', () => {
+      const next = themeToggle.checked ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
     });
 
-    // Terminal Animation
+    // Terminal Animation - starts when scrolled into view
     const commands = [
       { delay: 100, text: '> whoami' },
-      { delay: 800, text: 'Carlos Vertti - CTO & InfoSec Engineer' },
+      { delay: 800, text: 'Carlos Vertti - IT Engineering Student · CTO @ 1927' },
       { delay: 1200, text: '> cat skills.txt' },
       { delay: 1800, text: 'Python | IA | Cloud | GRC | Automation | Ciberseguridad' },
       { delay: 2400, text: '> echo $STATUS' },
@@ -229,24 +233,33 @@
     ];
 
     const output = document.getElementById('terminalOutput');
-    let totalDelay = 0;
+    const terminalSection = output.closest('.terminal');
 
-    commands.forEach(cmd => {
-      totalDelay += cmd.delay;
-      setTimeout(() => {
-        const line = document.createElement('div');
-        line.innerHTML = cmd.text.startsWith('>') 
-          ? `<span class="terminal-prompt">${cmd.text}</span>`
-          : cmd.text;
-        output.appendChild(line);
-      }, totalDelay);
-    });
+    const terminalObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          terminalObserver.disconnect();
+          let totalDelay = 0;
+          commands.forEach(cmd => {
+            totalDelay += cmd.delay;
+            setTimeout(() => {
+              const line = document.createElement('div');
+              line.innerHTML = cmd.text.startsWith('>')
+                ? `<span class="terminal-prompt">${cmd.text}</span>`
+                : cmd.text;
+              output.appendChild(line);
+            }, totalDelay);
+          });
+          setTimeout(() => {
+            const cursor = document.createElement('span');
+            cursor.innerHTML = ' <span style="animation: blink 1s infinite">█</span>';
+            output.appendChild(cursor);
+          }, totalDelay + 500);
+        }
+      });
+    }, { threshold: 0.3 });
 
-    setTimeout(() => {
-      const cursor = document.createElement('span');
-      cursor.innerHTML = ' <span style="animation: blink 1s infinite">█</span>';
-      output.appendChild(cursor);
-    }, totalDelay + 500);
+    terminalObserver.observe(terminalSection);
   </script>
 </body>
 </html>
